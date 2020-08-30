@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>公司架构</title>
+    <meta name="renderer" content="webkit">	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">	
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">	
+	<meta name="apple-mobile-web-app-capable" content="yes">	
+	<meta name="format-detection" content="telephone=no">	
+	<link rel="stylesheet" type="text/css" href="/static/common/layui/css/layui.css" media="all">
+	<link rel="stylesheet" type="text/css" href="/static/common/bootstrap/css/bootstrap.css" media="all">
+	<link rel="stylesheet" type="text/css" href="/static/common/global.css" media="all">
+	<link rel="stylesheet" type="text/css" href="/static/css/personal.css" media="all">
+</head>
+<body>
+   
+    <section class="layui-larry-box">
+        <div class="larry-personal">
+            <div class="layui-tab">
+                <blockquote class="layui-elem-quote news_search">
+                    <div class="layui-inline">
+                        <div class="layui-input-inline">
+                            <input type="text" value="" placeholder="请输入关键字" class="layui-input search_input">
+                        </div>
+                        <a class="layui-btn search_btn">查询</a>
+                    </div>
+                    <div class="layui-inline">
+                        <button onclick="document.getElementById('id01').style.display='block'; document.getElementById('id02').style.display='none'" class="layui-btn layui-btn-normal newsAdd-btn">添加部门</button>
+                    </div>
+                    <div class="layui-inline">
+                        <!-- <a href="" class="layui-btn layui-btn-danger batchDel"　onclick="batchDelete()">批量删除</a> -->
+                        <button class="layui-btn layui-btn-danger batchDel" onClick="batchDeleted()">批量删除</button>
+                    </div>
+                    <div class="layui-inline">
+                        <a href="" class="layui-btn layui-btn-danger batchDel">导出execl</a>
+                    </div>
+                    <div class="layui-inline">
+                        <div class="layui-form-mid layui-word-aux">本页面刷新后除新添加的部门外所有操作无效，关闭页面所有数据重置</div>
+                    </div>
+                </blockquote>
+                <!-- 模太框 -->
+                <div id="id01" class="modal　larry-personal-body clearfix" style="display: none;">
+                    <form class="modal-content animate" action="/users/index/company/department_action/" method="POST" style="width: 800px; height: 600px;left: 350px;"> 
+                        {% csrf_token %}
+                        <div class="imgcontainer">
+                            <!-- 点击×号，隐藏模态框-->
+                            <span onclick="document.getElementById('id01').style.display='none'; document.getElementById('id02').style.display='block'" class="close" title="Close Modal">&times;</span>
+                        </div>
+                        <header class="larry-personal-tit" style="text-align:center;">
+                            <span>添加部门</span>
+                        </header>
+                        <div class="container">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">编号</label>
+                                <div class="layui-input-block">
+                                    <input type="text" placeholder="请输入编号" name="number" class="layui-input" style="width: 300px;">
+                                </div>     
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">标签</label>
+                                <div class="layui-input-block">
+                                    <input type="text" placeholder="请输入标签" name="label" class="layui-input" style="width: 300px;">
+                                </div>     
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">部门名称</label>
+                                <div class="layui-input-block">
+                                    <input type="text" placeholder="请输入部门名称" name="department" class="layui-input" style="width: 300px;">
+                                </div>     
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">负责人</label>
+                                <div class="layui-input-inline">
+                                    <!-- <input type="text" placeholder="请输入负责人" name="department_manager" class="layui-input" style="width: 300px;"> -->
+                                    <select name="user" id="" style="width: 300px;height: 40px;">
+                                        {% for user in userList %}
+                                            <option value="{{user.nid}}">{{user.username}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>     
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">部门人数</label>
+                                <div class="layui-input-block">
+                                    <input type="text" placeholder="请输入部门人数" name="department_people" class="layui-input" style="width: 300px;">
+                                </div>     
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">创建时间</label>
+                                <div class="layui-input-block">
+                                    <input type="date" placeholder="请输入创建时间" name="create_time" class="layui-input" style="width: 300px;">
+                                </div>     
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-input-block">
+                                    <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">提交</button>
+                                      <!-- 点击cancel按钮，把模态框隐藏-->
+                                    <button type="button" onclick="document.getElementById('id01').style.display='none'; document.getElementById('id02').style.display='block'" class="layui-btn" lay-submit="" lay-filter="demo1">关闭</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="layui-tab-content larry-personal-body clearfix mylog-info-box" id="id02">
+                    <div class="layui-tab-item layui-field-box layui-show">
+                        <table class="layui-table table-hover" lay-even="" lay-skin="nob">
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox" name="selAll" onClick="funcSelAll(this)"></th>
+                                    <th>序号</th>
+                                    <th>编号</th>
+                                    <th>标签</th>
+                                    <th>部门名称</th>
+                                    <th>部门负责人</th>
+                                    <th>部门人数</th>
+                                    <th>创建时间</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for data in dataList %}  
+                                <tr>
+                                    <td><input type="checkbox" name="selOne" value={{data.nid}} onClick="funcSelOne(this)"></td>
+                                    <td>{{data.nid}}</td>
+                                    <td>{{data.number}}</td>
+                                    <td>{{data.label}}</td>
+                                    <td>{{data.department}}</td>
+                                    <td>{{data.department_manager.username}}</td>
+                                    <td>{{data.department_people}}</td>
+                                    <td>{{data.create_time}}</td>
+                                    <td>
+                                        <a href="/users/index/company/department_action/?nid={{data.nid}}"><button class="layui-btn layui-btn-radius">编辑</button></a>
+                                        <a href="/users/index/company/department_action/?nid={{data.nid}}"><button class="layui-btn layui-btn-radius layui-btn-warm">删除</button></a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <div class="larry-table-page clearfix">
+                            <div id="page" class="page"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="/static/common/layui/layui.js"></script>
+    <script type="text/javascript">
+        	layui.use(['jquery','layer','element','laypage'],function(){
+	      window.jQuery = window.$ = layui.jquery;
+	      window.layer = layui.layer;
+          var element = layui.element(),
+              laypage = layui.laypage;       
+          laypage({
+					cont: 'page',
+					pages: 10 //总页数
+						,
+					groups: 5 //连续显示分页数
+						,
+					jump: function(obj, first) {
+						//得到了当前页，用于向服务端请求对应数据
+						var curr = obj.curr;
+						if(!first) {
+							//layer.msg('第 '+ obj.curr +' 页');
+						}
+					}
+				});
+
+          laypage({
+					cont: 'page2',
+					pages: 10 //总页数
+						,
+					groups: 5 //连续显示分页数
+						,
+					jump: function(obj, first) {
+						//得到了当前页，用于向服务端请求对应数据
+						var curr = obj.curr;
+						if(!first) {
+							//layer.msg('第 '+ obj.curr +' 页');
+						}
+					}
+				});
+    });
+
+
+    // 获取模型
+    var modal = document.getElementById('id01');
+
+    // 鼠标点击模型外区域关闭登录框
+    window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+        document.getElementById('id02').style.display='block'
+        }
+    }
+
+    // 当全选按钮，选中时，所有复选框被选中，当全选按钮不选中时，所有的也不被选中
+    function funcSelAll(){
+        var selects = document.getElementsByName("selOne");
+        if(document.getElementsByName("selAll")[0].checked==true){
+            for(var i = 0; i < selects.length; i++){
+                selects[i].checked = true;
+            } 
+        }else{
+            for(var i = 0; i < selects.length; i++){
+                selects[i].checked = false;
+            }
+        }
+    }
+
+    // 当所有的复选框被选中时，全选按钮被选中，当其中任意一个或者多个没有被选中时，全选按钮不被选中
+    function funcSelOne(){
+        var one = document.getElementsByName("selOne");
+        var all = document.getElementsByName("selAll")[0];
+        var selCount = 0;
+        var unSelCount = 0;
+        for(var i = 0; i < one.length; i++ ){
+            if(one[i].checked == true){
+                selCount++;
+            }
+            if(one.checked == false){
+                unSelCount++;
+            }
+            if(selCount == one.length){
+                all.checked = true;
+            }
+            if(unSelCount > 0){
+                all.checked = false
+            }
+        }
+
+        //<!--获取checked选中的的值-->
+        // var id = document.getElementsByName('selOne');
+        //     var value = [];
+        //     for(var i = 0; i < id.length; i++){
+        //      if(id[i].checked){
+        //      value.push(id[i].value);
+        //     }
+        //     }
+            // alert(value);
+    }
+
+    function funDelBatch(){
+        var strsValue="";
+        var strs=document.getElementsByName("selOne");
+        if(strs!=null&&strs.length>0){
+        for(var i=0;i<strs.length;i++){
+        if(strs[i].checked==true){
+        strsValue=strsValue+strs[i].value+",";
+        }
+    }
+    }
+    }
+
+    // 批量删除功能
+    function batchDeleted(){
+        //<!--获取checked选中的的值-->
+        // alert("批量删除")
+        var id = document.getElementsByName('selOne');
+        var value = [];
+        for(var i = 0; i < id.length; i++){
+            if(id[i].checked){
+            value.push(id[i].value);
+        }
+        }
+        // alert(value);
+
+        //发送ajax请求到后端
+
+        $.ajax({
+            url:"/users/index/company/department_action/",
+            type:"DELETE",
+            // data:{value:value},
+            data:JSON.stringify({
+                value:value
+            }),
+            headers:{'X-CSRFToken':"{{csrf_token}}"},
+            success: function(data){
+                alert(data)
+                window.location.reload();　//　进行页面刷新
+            }
+        })
+    }
+
+
+
+
+    </script>
+</body>
+
+</html>>
