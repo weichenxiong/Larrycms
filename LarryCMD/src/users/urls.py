@@ -6,6 +6,7 @@ urlpatterns = [
     path("index/", views.index),
     path("index/main/", views.main),
     path("index/company/", include("companyInfo.urls")), #公司详情
+    path(r'search/', include('haystack.urls'), name='search'),
 ]
 
 

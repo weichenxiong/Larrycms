@@ -129,22 +129,25 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {% for data in dataList %}  
-                                <tr>
-                                    <td><input type="checkbox" name="selOne" value={{data.nid}} onClick="funcSelOne(this)"></td>
-                                    <td>{{data.nid}}</td>
-                                    <td>{{data.number}}</td>
-                                    <td>{{data.label}}</td>
-                                    <td>{{data.department}}</td>
-                                    <td>{{data.department_manager.username}}</td>
-                                    <td>{{data.department_people}}</td>
-                                    <td>{{data.create_time}}</td>
-                                    <td>
-                                        <a href="/users/index/company/department_action/?nid={{data.nid}}"><button class="layui-btn layui-btn-radius">编辑</button></a>
-                                        <a href="/users/index/company/department_action/?nid={{data.nid}}"><button class="layui-btn layui-btn-radius layui-btn-warm">删除</button></a>
-                                    </td>
-                                </tr>
-                                {% endfor %}
+                                {% if query %}
+                                    {% for result in page.object_list %}  
+                                    <tr>
+                                        <td><input type="checkbox" name="selOne" value={{data.nid}} onClick="funcSelOne(this)"></td>
+                                        <td>{{result.object.nid}}</td>
+                                        <td>{{result.object.number}}</td>
+                                        <td>{{result.object.label}}</td>
+                                        <td>{{result.object.department}}</td>
+                                        <td>{{result.object.department_manager.username}}</td>
+                                        <td>{{result.object.department_people}}</td>
+                                        <td>{{result.object.create_time}}</td>
+                                        <td>
+                                            <a href="/users/index/company/department_action/?nid={{data.nid}}"><button class="layui-btn layui-btn-radius">编辑</button></a>
+                                            <a href="/users/index/company/department_action/?nid={{data.nid}}"><button class="layui-btn layui-btn-radius layui-btn-warm">删除</button></a>
+                                        </td>
+                                    </tr>
+                                    {% empty %}
+                                    {% endfor %}
+                                {% endif %}
                             </tbody>
                         </table>
                         <div class="larry-table-page clearfix">
