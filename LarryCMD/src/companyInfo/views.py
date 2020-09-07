@@ -6,6 +6,7 @@ from django.views import View
 from .models import CompanyDetail, Department
 from users.models import User
 from django.http import HttpResponseRedirect
+from haystack.views import SearchView
 
 
 class CompanyInfoView(View):
@@ -117,12 +118,36 @@ def downloadExcel(request):
         return response
 
 
-from haystack.views import SearchView
-from .models import *
- 
 class SeachView(SearchView):
+    """搜索功能"""
     def extra_context(self):       #重载extra_context来添加额外的context内容
         context = super(MySeachView,self).extra_context()
         side_list = Topic.objects.filter(kind='major').order_by('add_date')[:8]
         context['side_list'] = side_list
         return context
+
+class DepartmentEdit(View):
+    def get(self, request):
+        templates_name = "department_edit.html"
+        nid = request.GET.get("nid")
+        userList = User.objects.all()
+        data = Department.objects.filter(nid=nid).first()
+
+        return render(request, templates_name, locals())
+
+    
+
+    def post(self, request):
+        nid = request.POST.get("nid")
+        number = request.POST.get("number")
+        label = request.POST.get("label")
+        department = request.POST.get("department")
+        department_manager = request.POST.get("user")
+        department_people = request.POST.get("department_people")
+        create_time = request.POST.get("create_time")
+        print(nid,number, label, Department, department_manager, department_people, create_time)
+        Department.objects.filter(nid=nid).update(number=number, label=label, department=department,
+            department_manager_id=department_manager, department_people=department_people,
+            create_time=create_time)
+        return redirect("/users/index/company/structure/")
+
