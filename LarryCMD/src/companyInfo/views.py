@@ -13,13 +13,14 @@ class CompanyInfoView(View):
     """公司详情"""
     def get(self, request):
         # 展示数据
+        templates_name = "companydetails.html"
         companyInfo = CompanyDetail.objects.all()
-        # for company in companyInfo:
-        #     print(company.company_name)
-        return render(request, "companydetails.html", {"companyInfo": companyInfo})
+
+        return render(request, templates_name, {"companyInfo": companyInfo})
 
     def post(self, request):
         # 获取前端返回的数据
+        url = "/users/index/company/detail"
         company_name = request.POST.get("companyName")
         username = request.POST.get("username")
         companyID = request.POST.get("companyID")
@@ -30,28 +31,34 @@ class CompanyInfoView(View):
         # 保存数据
         CompanyDetail.objects.update(company_name=company_name, company_register=username,business_license=companyID, register_money=register_money, company_address=address, company_detail=detail)
 
-        return redirect("/users/index/company/detail")
+        return redirect(url)
 
 class DepartmentInfo(View):
     """公司架构"""
     def get(self, request):
+
+        templates_name = "department.html"
         dataList = Department.objects.all()
         userList = User.objects.all()
-        return render(request, "department.html",locals())
+        return render(request, templates_name,locals())
 
     def post(self, request):
         pass
         
 class DepartmentAction(View):
+
     def get(self, request):
         #　删除部门
+        url = "/users/index/company/structure/"
         nid = request.GET.get("nid")
         Department.objects.filter(nid=nid).delete()
 
-        return redirect("/users/index/company/structure/")
+        return redirect(url)
         
     def post(self, request):
         # 添加部门
+        url = "/users/index/company/structure/"
+
         number = request.POST.get("number")
         label = request.POST.get("label")
         department = request.POST.get("department")
@@ -63,7 +70,7 @@ class DepartmentAction(View):
                 department_manager_id = department_manager,
                 department_people=department_people,create_time=create_time)
         
-        return redirect("/users/index/company/structure/")
+        return redirect(url)
         
     def delete(self, request):
         # 批量删除部门
@@ -127,7 +134,9 @@ class SeachView(SearchView):
         return context
 
 class DepartmentEdit(View):
+    """部门编辑"""
     def get(self, request):
+
         templates_name = "department_edit.html"
         nid = request.GET.get("nid")
         userList = User.objects.all()
@@ -135,9 +144,9 @@ class DepartmentEdit(View):
 
         return render(request, templates_name, locals())
 
-    
-
     def post(self, request):
+
+        url = "/users/index/company/structure/"
         nid = request.POST.get("nid")
         number = request.POST.get("number")
         label = request.POST.get("label")
@@ -149,5 +158,16 @@ class DepartmentEdit(View):
         Department.objects.filter(nid=nid).update(number=number, label=label, department=department,
             department_manager_id=department_manager, department_people=department_people,
             create_time=create_time)
-        return redirect("/users/index/company/structure/")
+
+        return redirect(url)
+
+
+class Position(View):
+    """员工岗位"""
+    def get(self, request):
+        templates_name = "position.html"
+        return render(request, templates_name)
+    
+    def post(self,request):
+        pass
 
