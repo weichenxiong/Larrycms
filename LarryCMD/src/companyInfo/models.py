@@ -27,6 +27,8 @@ class Department(models.Model):
         db_table = "LCMS_companystructure"
         verbose_name = "部门信息"
         verbose_name_plural = verbose_name
+
+
     
 
     

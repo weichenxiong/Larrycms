@@ -7,5 +7,6 @@ urlpatterns = [
     path("department_action/", views.DepartmentAction.as_view()), # 部门的删除添加，删除
     path("export_excel/", views.downloadExcel), # 导出excel
     path('search/', views.SeachView), # 搜索功能
-    path("department_edit/", views.DepartmentEdit.as_view()) # 部门编辑
+    path("department_edit/", views.DepartmentEdit.as_view()), # 部门编辑
+    path("position/", views.Position.as_view()), # 部门岗位
 ]
