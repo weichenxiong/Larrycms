@@ -1,12 +1,14 @@
 import json
 import xlwt
+import datetime
 from io import BytesIO
 from django.shortcuts import render, redirect,HttpResponse
 from django.views import View
-from .models import CompanyDetail, Department
+from .models import CompanyDetail, Department, Position
 from users.models import User
 from django.http import HttpResponseRedirect
 from haystack.views import SearchView
+
 
 
 class CompanyInfoView(View):
@@ -162,12 +164,126 @@ class DepartmentEdit(View):
         return redirect(url)
 
 
-class Position(View):
+class Positions(View):
     """员工岗位"""
     def get(self, request):
+        '''获取数据展示'''
         templates_name = "position.html"
-        return render(request, templates_name)
+        userList = User.objects.all()
+        positionList = Position.objects.all()
+        departmentList = Department.objects.all()
+        # for i in data:
+        #     print(i.username, i.departments, i.position)
+        return render(request, templates_name, locals())
     
     def post(self,request):
         pass
 
+def DelUserPosition(request):
+    """删除用户岗位"""
+    url = "/users/index/company/position/"
+
+    if request.method == "GET":
+        nid = request.GET.get("nid")
+        User.objects.filter(nid=nid).delete()
+        return redirect(url)
+
+
+def ExportUserPosition(request):
+    """导出员工岗位信息"""
+    if request.method == "POST":
+        # 创建一个表
+        wb = xlwt.Workbook(encoding="utf8")
+        # 创建一个sheet对象
+        sheet = wb.add_sheet("position")
+        # 写入标题数据
+        sheet.write(0, 0, "序号")
+        sheet.write(0, 1, "姓名")
+        sheet.write(0, 2, "岗位")
+        sheet.write(0, 3, "部门")
+        sheet.write(0, 4, "入职时间")
+        sheet.write(0, 5, "离职时间")
+        sheet.write(0, 6, "电话")
+        sheet.write(0, 7, "住址")
+
+        data = User.objects.all()
+        data = list(data)
+        excel_row = 1
+        for i in range(len(data)):
+            sheet.write(excel_row, 0, data[i].nid)
+            sheet.write(excel_row, 1, data[i].username)
+            sheet.write(excel_row, 2, data[i].position.position)
+            sheet.write(excel_row, 3, data[i].departments.department)
+            sheet.write(excel_row, 4, data[i].enterTime)
+            sheet.write(excel_row, 5, data[i].leaveTime)
+            sheet.write(excel_row, 6, data[i].iphone)
+            sheet.write(excel_row, 7, data[i].address)
+            excel_row += 1
+        # 写到io
+        output = BytesIO()
+        wb.save(output)
+        # 重新定位到开始
+        output.seek(0)
+        #　设置HTTPResponse的类型
+        response = HttpResponse(output.getvalue(), content_type='application/vnd.ms-excel')
+        response['Content-Disposition'] = 'attachment;filename=test.xls'
+        response.write(output.getvalue())
+        print("创建成功",response)
+        return response
+
+
+def BatchDelUserPosition(request):
+    """批量删除选中的记录"""
+    dataList = list()
+    data = json.loads(request.body)["value"]
+    for i in data:
+        dataList.append(int(i))
+    User.objects.filter(nid__in=dataList).delete() #进行批量删除
+    return HttpResponse("ok")
+    
+def AddUserPosition(request):
+    """添加员工"""
+    url = "/users/index/company/position/"
+    
+    username = request.POST.get("username")
+    password = request.POST.get("password")
+    position = request.POST.get("position")
+    department = request.POST.get("department")
+    enterTime = request.POST.get("enterTime")
+    leaveTime = request.POST.get("leaveTime")
+    iphone = request.POST.get("iphone")
+    address = request.POST.get("address")
+    #todo  数据验证
+    User.objects.create(username=username, password=password, position_id=position,departments_id=department,
+                        enterTime=enterTime,leaveTime=leaveTime,iphone=iphone,address=address)
+    print(username, position,department,enterTime,leaveTime,iphone,address)
+    return redirect(url)
+
+
+class UserPositionEdit(View):
+    def get(self,request):
+
+        templates_name = "position_edit.html"
+        nid = request.GET.get("nid")
+        userList = User.objects.filter(nid=nid).first()
+        positionList = Position.objects.all()
+        departmentList = Department.objects.all()
+        return render(request, templates_name, locals())
+        
+
+    def post(self, request):
+        
+        url = "/users/index/company/position/"
+        nid = request.POST.get("nid")
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+        position = request.POST.get("position")
+        department = request.POST.get("department")
+        enterTime = request.POST.get("enterTime")
+        leaveTime = request.POST.get("leaveTime")
+        iphone = request.POST.get("iphone")
+        address = request.POST.get("address")
+        print(nid,username,password, position,department,enterTime,leaveTime,iphone,address)
+        User.objects.filter(nid=nid).update(username=username, password=password,position_id=position,departments_id=department,
+                            enterTime=enterTime,leaveTime=leaveTime,iphone=iphone,address=address)
+        return redirect(url)
