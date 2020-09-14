@@ -26,125 +26,172 @@
                 <a class="layui-btn search_btn">查询</a>
             </div>
             <div class="layui-inline">
-                <a class="layui-btn layui-btn-normal newsAdd_btn">添加文章</a>
+                <!-- <a class="layui-btn layui-btn-normal">添加员工</a> -->
+                <button class="layui-btn layui-btn-normal" onclick="document.getElementById('id01').style.display='block'; document.getElementById('id02').style.display='none'">添加员工</button>
             </div>
             <div class="layui-inline">
-                <a class="layui-btn recommend" style="background-color: #5FB878;">推荐文章</a>
+                <!-- <a class="layui-btn" style="background-color: #5FB878;">批量删除</a> -->
+                <button class="layui-btn" style="background-color: #5FB878;" onclick="BatchDel()">批量删除</button>
             </div>
             <div class="layui-inline">
-                <a class="layui-btn audit_btn">审核文章</a>
+                <!-- <a class="layui-btn audit_btn">导出Excel</a> -->
+                <button class="layui-btn" onclick="export_excel()">导出Excel</button>
             </div>
-            <div class="layui-inline">
+            <!-- <div class="layui-inline">
                 <a class="layui-btn layui-btn-danger batchDel">批量删除</a>
-            </div>
+            </div> -->
                 </blockquote>
 
-                <div class="layui-form news_list">
+                <!-- 添加部门模太框 -->
+                <div id="id01" class="modal　larry-personal-body clearfix" style="display: none;">
+                    <form class="modal-content animate" action="/users/index/company/add_user_position/" method="POST" style="width: 800px; height: 600px;left: 350px;"> 
+                        {% csrf_token %}
+                        <div class="imgcontainer">
+                            <!-- 点击×号，隐藏模态框-->
+                            <span onclick="document.getElementById('id01').style.display='none'; document.getElementById('id02').style.display='block'" class="close" title="Close Modal">&times;</span>
+                        </div>
+                        <header class="larry-personal-tit" style="text-align:center;">
+                            <span>添加员工</span>
+                        </header>
+                        <!-- <div class="container">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">序号</label>
+                                <div class="layui-input-block">
+                                    <input type="text" id="number" placeholder="请输入" name="nid" class="layui-input" style="width: 300px;">
+                                </div>     
+                            </div> -->
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">姓名</label>
+                                <div class="layui-input-block">
+                                    <input type="text" id="label" placeholder="请输入名字" name="username" class="layui-input" style="width: 300px;">
+                                </div>     
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">密码</label>
+                                <div class="layui-input-block">
+                                    <input type="text" id="label" placeholder="请输入密码" name="password" class="layui-input" style="width: 300px;">
+                                </div>     
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">岗位</label>
+                                <div class="layui-input-inline" style="left:40px;">
+                                    <!-- <input type="text" placeholder="请输入负责人" name="department_manager" class="layui-input" style="width: 300px;"> -->
+                                    <select name="position" id="manager" style="width: 300px;height: 40px;">
+                                        {% for data in positionList %}
+                                            <option value="{{data.nid}}">{{data.position}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>     
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">部门</label>
+                                <div class="layui-input-inline" style="left:40px;">
+                                    <!-- <input type="text" placeholder="请输入负责人" name="department_manager" class="layui-input" style="width: 300px;"> -->
+                                    <select name="department" id="manager" style="width: 300px;height: 40px;">
+                                        {% for data in departmentList %}
+                                            <option value="{{data.nid}}">{{data.department}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>     
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">入职时间</label>
+                                <div class="layui-input-block">
+                                    <input type="date" id="department_people" placeholder="请输入入职时间" name="enterTime" class="layui-input" style="width: 300px;">
+                                </div>     
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">离职时间</label>
+                                <div class="layui-input-block">
+                                    <input type="date" id="create_time" placeholder="请输入离职时间" name="leaveTime" class="layui-input" style="width: 300px;">
+                                </div>     
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">电话</label>
+                                <div class="layui-input-block">
+                                    <input type="text" id="create_time" placeholder="请输入联系方式" name="iphone" class="layui-input" style="width: 300px;">
+                                </div>     
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">住址</label>
+                                <div class="layui-input-block">
+                                    <input type="text" id="create_time" placeholder="请输入住址" name="address" class="layui-input" style="width: 300px;">
+                                </div>     
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-input-block">
+                                    <button type="submit" id="commit" class="layui-btn" lay-submit="" lay-filter="demo1">提交</button>
+                                        <!-- 点击cancel按钮，把模态框隐藏-->
+                                    <button type="button" onclick="document.getElementById('id01').style.display='none'; document.getElementById('id02').style.display='block'" class="layui-btn" lay-submit="" lay-filter="demo1">关闭</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="layui-form news_list" id="id02">
                     <table class="layui-table">
                         <colgroup>
-                        <col width="50">
-                        <col>
-                        <col width="9%">
-                        <col width="9%">
-                        <col width="9%">
-                        <col width="9%">
-                        <col width="9%">
-                        <col width="15%">
+                        <col width="2%">
+                        <col width="2%">
+                        <col width="2%">
+                        <col width="2%">
+                        <col width="2%">
+                        <col width="2%">
+						<col width="2%">
+						<col width="2%">
+						<col width="2%">
+						<col width="5%">
                     </colgroup>
                     <thead>
                         <tr>
                             <th>
-                                <input type="checkbox" name="" lay-skin="primary" lay-filter="allChoose" id="allChoose">
+                                <input type="checkbox" name="selAll" lay-skin="primary" lay-filter="allChoose" id="allChoose">
                                 <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div>
                             </th>
-                            <th style="text-align:left;">标题文章</th>
-                            <th>发布人</th>
-                            <th>审核状态</th>
-                            <th>浏览权限</th>
-                            <th>是否展示</th>
-                            <th>发布时间</th>
+                            <th>序号</th>
+                            <th>姓名</th>
+                            <th>岗位</th>
+                            <th>部门</th>
+                            <th>入职时间</th>
+							<th>离职时间</th>
+							<th>电话</th>
+							<th>住址</th>
                             <th>操作</th>
                         </tr>
                     </thead>
                     <tbody class="news_content">
+                        {% for data in userList %}
+                        {% csrf_token %}
                         <tr>
                             <td>
-                                <input type="checkbox" name="checkbox" lay-skin="primary" lay-filter="choose">
+                                <input type="checkbox" name="selOne" value={{data.nid}} lay-skin="primary" lay-filter="choose">
                                 <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div>
                             </td>
-                            <td align="left">css3用transition实现边框动画效果</td>
-                            <td>请叫我马哥</td>
-                            <td>审核通过</td>
-                            <td>开放浏览</td>
+                            <td align="left">{{data.nid}}</td>
+                            <td>{{data.username}}</td>
+                            <td>{{data.position.position}}</td>
+                            <td>{{data.departments.department}}</td>
                             <td>
-                                <input type="checkbox" name="show" lay-skin="switch" lay-text="是|否" lay-filter="isShow">
-                                <div class="layui-unselect layui-form-switch" lay-skin="_switch"><em>否</em><i></i></div>
+                                <!-- <input type="checkbox" name="show" lay-skin="switch" lay-text="是|否" lay-filter="isShow">
+								<div class="layui-unselect layui-form-switch" lay-skin="_switch"><em>否</em><i></i></div> -->
+								{{data.enterTime|date:'Y-m-d'}}
                             </td>
-                            <td>2017-04-14</td>
+							<td>{{data.leaveTime|date:'Y-m-d'}}</td>
+							<td>{{data.iphone}}</td>
+							<td>{{data.address}}</td>
                             <td>
-                                <a class="layui-btn layui-btn-mini news_edit"><i class="iconfonr icon-edit"></i>编辑</a>
-                                <a class="layui-btn layui-btn-normal layui-btn-mini news_collect"><i class="layui-icon"></i> 收藏</a>
-								<a class="layui-btn layui-btn-danger layui-btn-mini news_del" data-id="1"><i class="layui-icon"></i> 删除</a>
+                                <a href="/users/index/company/user_position_edit/?nid={{data.nid}}" class="layui-btn layui-btn-mini"><i class="iconfonr icon-edit"></i>编辑</a>
+                                <!-- <a class="layui-btn layui-btn-normal layui-btn-mini news_collect"><i class="layui-icon"></i> 收藏</a> -->
+                                <a class="layui-btn layui-btn-danger layui-btn-mini" onclick='delUserPosition(this)' id={{data.nid}} data-id="1"><i class="layui-icon"></i> 删除</a>
+								<!-- <a href="/users/index/company/del_user_position/?nid={{data.nid}}" class="layui-btn layui-btn-danger layui-btn-mini" data-id="1"><i class="layui-icon"></i> 删除</a> -->
                             </td>
-                        </tr>
-                        <tr>
-							<td><input name="checked" lay-skin="primary" lay-filter="choose" type="checkbox">
-								<div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div>
-							</td>
-							<td align="left">自定义的模块名称可以包含/吗</td>
-							<td>请叫我马哥</td>
-							<td style="color:#f00">待审核</td>
-							<td>开放浏览</td>
-							<td><input name="show" lay-skin="switch" lay-text="是|否" lay-filter="isShow" checked="" type="checkbox">
-								<div class="layui-unselect layui-form-switch layui-form-onswitch" lay-skin="_switch"><em>是</em><i></i></div>
-							</td>
-							<td>2017-04-14</td>
-							<td>
-								<a class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a>
-								<a class="layui-btn layui-btn-normal layui-btn-mini news_collect"><i class="layui-icon"></i> 收藏</a>
-								<a class="layui-btn layui-btn-danger layui-btn-mini news_del" data-id="2"><i class="layui-icon"></i> 删除</a>
-							</td>
 						</tr>
-						<tr>
-							<td><input name="checked" lay-skin="primary" lay-filter="choose" type="checkbox">
-								<div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div>
-							</td>
-							<td align="left">layui.tree如何ajax加载二级菜单</td>
-							<td>admin</td>
-							<td>审核通过</td>
-							<td>开放浏览</td>
-							<td><input name="show" lay-skin="switch" lay-text="是|否" lay-filter="isShow" checked="" type="checkbox">
-								<div class="layui-unselect layui-form-switch layui-form-onswitch" lay-skin="_switch"><em>是</em><i></i></div>
-							</td>
-							<td>2017-04-14</td>
-							<td>
-								<a class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a>
-								<a class="layui-btn layui-btn-normal layui-btn-mini news_collect"><i class="layui-icon"></i> 收藏</a>
-								<a class="layui-btn layui-btn-danger layui-btn-mini news_del" data-id="3"><i class="layui-icon"></i> 删除</a>
-							</td>
-						</tr>
-						<tr>
-							<td><input name="checked" lay-skin="primary" lay-filter="choose" type="checkbox">
-								<div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div>
-							</td>
-							<td align="left">layui.upload如何带参数？像jq的data:{}那样</td>
-							<td>admin</td>
-							<td>审核通过</td>
-							<td>开放浏览</td>
-							<td><input name="show" lay-skin="switch" lay-text="是|否" lay-filter="isShow" checked="" type="checkbox">
-								<div class="layui-unselect layui-form-switch layui-form-onswitch" lay-skin="_switch"><em>是</em><i></i></div>
-							</td>
-							<td>2017-04-14</td>
-							<td>
-								<a class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a>
-								<a class="layui-btn layui-btn-normal layui-btn-mini news_collect"><i class="layui-icon"></i> 收藏</a>
-								<a class="layui-btn layui-btn-danger layui-btn-mini news_del" data-id="4"><i class="layui-icon"></i> 删除</a>
-							</td>
-						</tr>
+                        {% endfor %}
                     </tbody>
                     </table>
                     <div class="larry-table-page clearfix">
-                        <a href="javascript:;" class="layui-btn layui-btn-small"><i class="iconfont icon-shanchu1"></i>删除</a>
+                        <!-- <a href="javascript:;" class="layui-btn layui-btn-small"><i class="iconfont icon-shanchu1"></i>删除</a> -->
                         <div id="page" class="page"></div>
                    </div>
                 </div>
@@ -191,6 +238,105 @@
 					}
 				});
     });
+
+    // 删除选中记录
+    function delUserPosition(obj){
+        layer.confirm("确定删除此记录？", {icon:3, title:"提示消息"},function(index){
+            $.ajax({
+                url: "/users/index/company/del_user_position/",
+                type: "GET",
+                data:{nid:obj.id},
+                success: function(data){
+                    alert("删除成功！")
+                    window.location.reload();  //重新加载
+                }
+
+            })
+            
+            layer.close(index);
+        })
+    }
+
+
+    // 导出excel
+
+    function export_excel(){
+    var csrf = $('input[name="csrfmiddlewaretoken"]').val();
+    const req = new XMLHttpRequest();
+    req.open("POST", "/users/index/company/export_position/", true);
+    req.responseType = 'blob';
+    req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // 设置请求头
+    req.send("csrfmiddlewaretoken="+csrf); //输入参数
+    req.onload = function() {
+        // 返回值
+        const data = req.response;
+        const a = document.createElement('a');
+        const blob = new Blob([data]);
+        const blobUrl = window.URL.createObjectURL(blob);
+        download(blobUrl);
+    };
+}
+
+function download(blobUrl){
+    const a = document.createElement("a");
+    a.style.display = "none";
+    a.download = "test" + ".xls";
+    a.href = blobUrl;
+    a.click();
+    document.body.removeChild(a);
+}
+
+    // function funcSelAll(){
+    //         // 获取选中的值
+    //     var id = document.getElementsByName('selOne');
+    //     var value = [];
+    //     for(var i=0; i<id.length;i++){
+    //         if(id[i].checked){
+    //             value.push(id[i].value);
+    //         }
+    //     }
+    //     alert(value)
+    // }
+
+// 批量删除
+function BatchDel(){
+    // 获取选中记录的ID
+    var id = document.getElementsByName("selOne");
+    var value = [];
+    for(var i=0; i<id.length;i++){
+        if(id[i].checked){
+            value.push(id[i].value)
+        }
+    }
+    // 判断数据
+    if (value.length == 0){
+        layer.confirm("请选择记录再删除！",{icon:3, title:"提示消息"}, function(index){
+        
+        layer.close(index)
+        })
+        return false;
+    }
+    // 提示框
+    layer.confirm("确定删除此记录？", {icon:3, title:"提示消息"}, function(index){
+        $.ajax({
+            url:"/users/index/company/batch_del/",
+            type:"DELETE",
+            // data:{value:value},
+            data:JSON.stringify({
+                value:value
+            }),
+            headers:{'X-CSRFToken':"{{csrf_token}}"},
+            success: function(data){
+                alert("删除成功！");
+                window.location.reload(); //重新加载
+            }
+        })
+        layer.close(index);
+
+    })
+}
+    
+
 </script>
 </body>
 </html>>

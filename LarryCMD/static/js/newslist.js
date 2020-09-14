@@ -136,7 +136,7 @@ layui.config({
 				layer.msg("推荐成功");
             },2000);
 		}else{
-			layer.msg("请选择需要推荐的文章");
+			layer.msg("请选择需要删除的数据");
 		}
 	})
 
