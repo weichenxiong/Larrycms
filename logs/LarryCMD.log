@@ -4708,3 +4708,383 @@ INFO 2020-09-14 10:49:25,038 autoreload 203 /home/moluo/Desktop/LarryCMD/LarryCM
 INFO 2020-09-14 10:49:25,381 autoreload 578 Watching for file changes with StatReloader
 INFO 2020-09-14 10:49:31,291 autoreload 203 /home/moluo/Desktop/LarryCMD/LarryCMD/src/companyInfo/views.py changed, reloading.
 INFO 2020-09-14 10:49:31,623 autoreload 578 Watching for file changes with StatReloader
+INFO 2020-09-15 04:26:00,882 autoreload 578 Watching for file changes with StatReloader
+WARNING 2020-09-15 04:26:30,285 log 228 Not Found: /
+WARNING 2020-09-15 04:26:30,286 basehttp 154 "GET / HTTP/1.1" 404 2029
+WARNING 2020-09-15 04:26:30,356 log 228 Not Found: /favicon.ico
+WARNING 2020-09-15 04:26:30,356 basehttp 154 "GET /favicon.ico HTTP/1.1" 404 2080
+INFO 2020-09-15 04:26:36,206 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 04:26:36,372 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 04:26:36,373 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+INFO 2020-09-15 04:26:36,497 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 19194
+WARNING 2020-09-15 04:26:36,733 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 04:26:36,733 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 04:26:51,328 basehttp 154 "GET /users/index/company/detail/ HTTP/1.1" 200 4577
+INFO 2020-09-15 04:26:51,977 basehttp 154 "GET /users/index/company/structure/ HTTP/1.1" 200 17556
+INFO 2020-09-15 04:26:54,016 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 19194
+WARNING 2020-09-15 04:26:54,056 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 04:26:54,057 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 04:37:42,704 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+INFO 2020-09-15 04:37:42,769 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 19343
+WARNING 2020-09-15 04:37:42,775 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 04:37:42,775 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+WARNING 2020-09-15 04:37:42,860 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 04:37:42,861 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 04:37:44,058 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 04:37:44,101 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 04:37:44,102 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+INFO 2020-09-15 04:37:44,107 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 19343
+WARNING 2020-09-15 04:37:44,188 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 04:37:44,189 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 04:37:44,640 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 04:37:44,688 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 04:37:44,691 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+INFO 2020-09-15 04:37:44,695 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 19343
+WARNING 2020-09-15 04:37:44,771 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 04:37:44,771 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 04:52:39,210 autoreload 578 Watching for file changes with StatReloader
+INFO 2020-09-15 04:52:58,525 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+INFO 2020-09-15 04:52:58,635 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 19343
+WARNING 2020-09-15 04:52:58,974 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 04:52:58,975 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+WARNING 2020-09-15 04:52:58,999 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 04:52:58,999 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 04:53:28,649 basehttp 154 "GET /users/search/?q=%E7%AD%96%E5%88%92%E9%83%A8%E9%97%A8 HTTP/1.1" 200 14427
+WARNING 2020-09-15 04:53:28,741 log 228 Not Found: /json/newsList.json
+WARNING 2020-09-15 04:53:28,742 basehttp 154 "GET /json/newsList.json HTTP/1.1" 404 2101
+INFO 2020-09-15 04:54:01,482 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 04:54:01,524 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 04:54:01,524 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+INFO 2020-09-15 04:54:01,537 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 19332
+WARNING 2020-09-15 04:54:01,615 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 04:54:01,616 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 04:54:09,753 basehttp 154 "GET /users/search/?q=24 HTTP/1.1" 200 16116
+WARNING 2020-09-15 04:54:09,800 log 228 Not Found: /json/newsList.json
+WARNING 2020-09-15 04:54:09,804 basehttp 154 "GET /json/newsList.json HTTP/1.1" 404 2101
+INFO 2020-09-15 04:54:20,589 basehttp 154 "GET /users/search/?q=24 HTTP/1.1" 200 16116
+INFO 2020-09-15 04:54:24,075 basehttp 154 "GET /users/search/?q=24 HTTP/1.1" 200 16116
+INFO 2020-09-15 04:54:56,905 basehttp 154 "GET /users/search/?q=24 HTTP/1.1" 200 16116
+INFO 2020-09-15 04:55:03,993 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+INFO 2020-09-15 04:55:04,075 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 19332
+WARNING 2020-09-15 04:55:04,078 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 04:55:04,079 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+WARNING 2020-09-15 04:55:04,157 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 04:55:04,157 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 04:55:14,956 basehttp 154 "GET /users/search/?q=php HTTP/1.1" 200 14427
+WARNING 2020-09-15 04:55:15,001 log 228 Not Found: /json/newsList.json
+WARNING 2020-09-15 04:55:15,001 basehttp 154 "GET /json/newsList.json HTTP/1.1" 404 2101
+INFO 2020-09-15 04:55:18,724 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 04:55:18,770 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 04:55:18,771 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+INFO 2020-09-15 04:55:18,781 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 19332
+WARNING 2020-09-15 04:55:18,870 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 04:55:18,870 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 04:55:24,418 basehttp 154 "GET /users/search/?q=root HTTP/1.1" 200 17827
+WARNING 2020-09-15 04:55:24,459 log 228 Not Found: /json/newsList.json
+WARNING 2020-09-15 04:55:24,460 basehttp 154 "GET /json/newsList.json HTTP/1.1" 404 2101
+INFO 2020-09-15 04:56:19,196 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+INFO 2020-09-15 04:56:19,285 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 19332
+WARNING 2020-09-15 04:56:19,290 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 04:56:19,290 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+WARNING 2020-09-15 04:56:19,324 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 04:56:19,324 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 04:56:22,173 basehttp 154 "GET /users/index/company/detail/ HTTP/1.1" 200 4577
+INFO 2020-09-15 04:56:22,887 basehttp 154 "GET /users/index/company/structure/ HTTP/1.1" 200 17556
+INFO 2020-09-15 04:56:25,643 basehttp 154 "GET /users/search/?q= HTTP/1.1" 200 14356
+WARNING 2020-09-15 04:56:25,682 log 228 Not Found: /json/newsList.json
+WARNING 2020-09-15 04:56:25,683 basehttp 154 "GET /json/newsList.json HTTP/1.1" 404 2101
+INFO 2020-09-15 04:56:27,969 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+INFO 2020-09-15 04:56:28,020 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 19332
+WARNING 2020-09-15 04:56:28,023 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 04:56:28,023 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+WARNING 2020-09-15 04:56:28,105 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 04:56:28,105 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 04:56:29,530 basehttp 154 "GET /users/search/?q= HTTP/1.1" 200 14356
+WARNING 2020-09-15 04:56:29,579 log 228 Not Found: /json/newsList.json
+WARNING 2020-09-15 04:56:29,580 basehttp 154 "GET /json/newsList.json HTTP/1.1" 404 2101
+INFO 2020-09-15 04:56:31,728 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 04:56:31,807 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 04:56:31,811 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+INFO 2020-09-15 04:56:31,815 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 19332
+WARNING 2020-09-15 04:56:31,849 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 04:56:31,849 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 04:56:58,700 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 04:56:58,747 log 228 Not Found: /users/index/js/navtab.js
+INFO 2020-09-15 04:56:58,749 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 19332
+WARNING 2020-09-15 04:56:58,749 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+WARNING 2020-09-15 04:56:58,833 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 04:56:58,833 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 04:56:59,366 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 04:56:59,405 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 04:56:59,405 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+INFO 2020-09-15 04:56:59,415 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 19332
+WARNING 2020-09-15 04:56:59,499 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 04:56:59,499 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 04:56:59,807 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 04:56:59,853 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 04:56:59,855 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+INFO 2020-09-15 04:56:59,860 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 19332
+WARNING 2020-09-15 04:56:59,936 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 04:56:59,936 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 04:57:00,009 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 04:57:00,083 log 228 Not Found: /users/index/js/navtab.js
+INFO 2020-09-15 04:57:00,090 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 19332
+WARNING 2020-09-15 04:57:00,095 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+WARNING 2020-09-15 04:57:00,126 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 04:57:00,126 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 04:57:00,198 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 04:57:00,275 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 04:57:00,275 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+INFO 2020-09-15 04:57:00,282 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 19332
+WARNING 2020-09-15 04:57:00,357 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 04:57:00,358 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 04:57:00,374 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 04:57:00,421 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 04:57:00,422 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+INFO 2020-09-15 04:57:00,425 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 19332
+WARNING 2020-09-15 04:57:00,500 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 04:57:00,500 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 04:57:00,583 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 04:57:00,663 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 04:57:00,664 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+INFO 2020-09-15 04:57:00,671 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 19332
+WARNING 2020-09-15 04:57:00,746 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 04:57:00,746 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 04:57:00,776 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 04:57:00,822 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 04:57:00,824 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+INFO 2020-09-15 04:57:00,824 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 19332
+WARNING 2020-09-15 04:57:00,898 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 04:57:00,899 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 04:57:00,976 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 04:57:01,054 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 04:57:01,055 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+INFO 2020-09-15 04:57:01,061 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 19332
+WARNING 2020-09-15 04:57:01,135 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 04:57:01,135 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 04:57:03,382 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 04:57:03,430 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 04:57:03,431 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+INFO 2020-09-15 04:57:03,440 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 19332
+WARNING 2020-09-15 04:57:03,519 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 04:57:03,519 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 04:57:05,732 basehttp 154 "GET /users/index/company/structure/ HTTP/1.1" 200 17565
+INFO 2020-09-15 04:57:37,482 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 04:57:37,567 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 04:57:37,567 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+INFO 2020-09-15 04:57:37,568 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 19332
+WARNING 2020-09-15 04:57:37,609 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 04:57:37,609 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 04:58:03,955 basehttp 154 "POST /users/index/company/add_user_position/ HTTP/1.1" 302 0
+INFO 2020-09-15 04:58:04,052 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 21196
+WARNING 2020-09-15 04:58:04,102 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 04:58:04,103 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 04:58:12,095 basehttp 154 "GET /users/search/?q=admin HTTP/1.1" 200 16113
+WARNING 2020-09-15 04:58:12,136 log 228 Not Found: /json/newsList.json
+WARNING 2020-09-15 04:58:12,136 basehttp 154 "GET /json/newsList.json HTTP/1.1" 404 2101
+INFO 2020-09-15 04:58:32,753 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 04:58:32,841 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 04:58:32,842 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+INFO 2020-09-15 04:58:32,849 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 21196
+WARNING 2020-09-15 04:58:32,886 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 04:58:32,886 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 04:58:52,900 basehttp 154 "POST /users/index/company/add_user_position/ HTTP/1.1" 302 0
+INFO 2020-09-15 04:58:52,974 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 23064
+WARNING 2020-09-15 04:58:53,028 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 04:58:53,029 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 04:58:59,289 basehttp 154 "GET /users/search/?q=%E9%9F%A6%E8%87%A3%E9%9B%84 HTTP/1.1" 200 16117
+WARNING 2020-09-15 04:58:59,327 log 228 Not Found: /json/newsList.json
+WARNING 2020-09-15 04:58:59,327 basehttp 154 "GET /json/newsList.json HTTP/1.1" 404 2101
+INFO 2020-09-15 04:59:01,037 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 04:59:01,113 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 04:59:01,113 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+INFO 2020-09-15 04:59:01,124 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 23064
+WARNING 2020-09-15 04:59:01,165 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 04:59:01,165 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 04:59:09,888 basehttp 154 "GET /users/search/?q=%E7%AD%96%E5%88%92%E9%83%A8 HTTP/1.1" 200 14427
+WARNING 2020-09-15 04:59:09,928 log 228 Not Found: /json/newsList.json
+WARNING 2020-09-15 04:59:09,929 basehttp 154 "GET /json/newsList.json HTTP/1.1" 404 2101
+INFO 2020-09-15 04:59:11,994 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 04:59:12,072 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 04:59:12,073 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+INFO 2020-09-15 04:59:12,082 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 23064
+WARNING 2020-09-15 04:59:12,165 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 04:59:12,166 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 04:59:23,776 basehttp 154 "GET /users/search/?q=12345678900 HTTP/1.1" 200 21253
+WARNING 2020-09-15 04:59:23,822 log 228 Not Found: /json/newsList.json
+WARNING 2020-09-15 04:59:23,823 basehttp 154 "GET /json/newsList.json HTTP/1.1" 404 2101
+INFO 2020-09-15 04:59:41,028 basehttp 154 "GET /users/search/?q=12345678900 HTTP/1.1" 200 21253
+INFO 2020-09-15 05:00:12,776 basehttp 154 "GET /users/search/?q=12345678900 HTTP/1.1" 200 21253
+INFO 2020-09-15 05:00:24,926 basehttp 154 "GET /users/search/?q=12345678900 HTTP/1.1" 200 21253
+INFO 2020-09-15 05:00:26,418 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 05:00:26,464 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 05:00:26,464 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+INFO 2020-09-15 05:00:26,475 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 23064
+WARNING 2020-09-15 05:00:26,566 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 05:00:26,567 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 05:00:28,748 basehttp 154 "GET /users/search/?q=%E9%9F%A6%E8%87%A3%E9%9B%84 HTTP/1.1" 200 16117
+WARNING 2020-09-15 05:00:28,785 log 228 Not Found: /json/newsList.json
+WARNING 2020-09-15 05:00:28,786 basehttp 154 "GET /json/newsList.json HTTP/1.1" 404 2101
+WARNING 2020-09-15 05:02:25,779 log 228 Not Found: /
+WARNING 2020-09-15 05:02:25,780 basehttp 154 "GET / HTTP/1.1" 404 2029
+INFO 2020-09-15 05:13:36,466 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+INFO 2020-09-15 05:13:36,557 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 23064
+WARNING 2020-09-15 05:13:36,561 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 05:13:36,561 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+WARNING 2020-09-15 05:13:36,739 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 05:13:36,740 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 05:13:39,800 basehttp 154 "POST /users/index/company/export_position/ HTTP/1.1" 200 11264
+INFO 2020-09-15 05:14:00,864 basehttp 154 "GET /users/search/?q=%E9%9F%A6%E8%87%A3%E9%9B%84 HTTP/1.1" 200 16117
+WARNING 2020-09-15 05:14:00,919 log 228 Not Found: /json/newsList.json
+WARNING 2020-09-15 05:14:00,920 basehttp 154 "GET /json/newsList.json HTTP/1.1" 404 2101
+INFO 2020-09-15 05:14:05,023 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 05:14:05,068 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 05:14:05,069 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+INFO 2020-09-15 05:14:05,081 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 23064
+WARNING 2020-09-15 05:14:05,170 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 05:14:05,170 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 05:14:25,599 basehttp 154 "POST /users/index/company/add_user_position/ HTTP/1.1" 302 0
+INFO 2020-09-15 05:14:25,635 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 24933
+WARNING 2020-09-15 05:14:25,732 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 05:14:25,732 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 05:14:35,958 basehttp 154 "GET /users/search/?q=%E9%9F%A6%E8%87%A3 HTTP/1.1" 200 16117
+WARNING 2020-09-15 05:14:36,004 log 228 Not Found: /json/newsList.json
+WARNING 2020-09-15 05:14:36,005 basehttp 154 "GET /json/newsList.json HTTP/1.1" 404 2101
+INFO 2020-09-15 05:14:38,765 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 05:14:38,812 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 05:14:38,813 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+INFO 2020-09-15 05:14:38,817 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 24933
+WARNING 2020-09-15 05:14:38,909 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 05:14:38,910 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 05:14:45,157 basehttp 154 "DELETE /users/index/company/batch_del/ HTTP/1.1" 200 2
+INFO 2020-09-15 05:14:46,635 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 21196
+WARNING 2020-09-15 05:14:46,683 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 05:14:46,683 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 05:14:49,135 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 05:14:49,190 log 228 Not Found: /users/index/js/navtab.js
+INFO 2020-09-15 05:14:49,192 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 21196
+WARNING 2020-09-15 05:14:49,192 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+WARNING 2020-09-15 05:14:49,277 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 05:14:49,278 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 05:15:06,309 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+INFO 2020-09-15 05:15:06,397 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 21196
+WARNING 2020-09-15 05:15:06,401 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 05:15:06,402 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+WARNING 2020-09-15 05:15:06,442 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 05:15:06,443 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 05:15:10,931 basehttp 154 "GET /users/index/company/user_position_edit/?nid=28 HTTP/1.1" 200 8073
+ERROR 2020-09-15 05:15:16,802 log 228 Internal Server Error: /users/index/company/user_position_edit/
+Traceback (most recent call last):
+  File "/home/moluo/.virtualenvs/LCMS/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/moluo/.virtualenvs/LCMS/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/moluo/.virtualenvs/LCMS/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/moluo/.virtualenvs/LCMS/lib/python3.6/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/moluo/.virtualenvs/LCMS/lib/python3.6/site-packages/django/views/generic/base.py", line 97, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/moluo/Desktop/LarryCMD/LarryCMD/src/companyInfo/views.py", line 288, in post
+    enterTime=enterTime,leaveTime=leaveTime,iphone=iphone,address=address)
+  File "/home/moluo/.virtualenvs/LCMS/lib/python3.6/site-packages/django/db/models/query.py", line 741, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "/home/moluo/.virtualenvs/LCMS/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1426, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "/home/moluo/.virtualenvs/LCMS/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1084, in execute_sql
+    sql, params = self.as_sql()
+  File "/home/moluo/.virtualenvs/LCMS/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1392, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "/home/moluo/.virtualenvs/LCMS/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 789, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "/home/moluo/.virtualenvs/LCMS/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 1273, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "/home/moluo/.virtualenvs/LCMS/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 1268, in get_prep_value
+    return self.to_python(value)
+  File "/home/moluo/.virtualenvs/LCMS/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 1243, in to_python
+    params={'value': value},
+django.core.exceptions.ValidationError: ["'' value has an invalid date format. It must be in YYYY-MM-DD format."]
+ERROR 2020-09-15 05:15:16,807 basehttp 154 "POST /users/index/company/user_position_edit/ HTTP/1.1" 500 119458
+INFO 2020-09-15 05:15:20,652 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 05:15:20,740 log 228 Not Found: /users/index/js/navtab.js
+INFO 2020-09-15 05:15:20,740 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 21196
+WARNING 2020-09-15 05:15:20,741 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+WARNING 2020-09-15 05:15:20,825 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 05:15:20,825 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 05:15:21,882 basehttp 154 "GET /users/index/company/user_position_edit/?nid=28 HTTP/1.1" 200 8073
+INFO 2020-09-15 05:15:33,561 basehttp 154 "POST /users/index/company/user_position_edit/ HTTP/1.1" 302 0
+INFO 2020-09-15 05:15:33,594 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 21204
+WARNING 2020-09-15 05:15:33,687 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 05:15:33,687 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 05:15:41,456 basehttp 154 "GET /users/search/?q=%E9%9F%A6%E8%87%A3%E9%9B%84 HTTP/1.1" 200 14427
+WARNING 2020-09-15 05:15:41,488 log 228 Not Found: /json/newsList.json
+WARNING 2020-09-15 05:15:41,489 basehttp 154 "GET /json/newsList.json HTTP/1.1" 404 2101
+INFO 2020-09-15 05:15:43,287 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 05:15:43,336 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 05:15:43,336 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+INFO 2020-09-15 05:15:43,346 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 21204
+WARNING 2020-09-15 05:15:43,421 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 05:15:43,421 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 05:15:50,615 basehttp 154 "GET /users/search/?q=%E9%9F%A6%E8%87%A3%E9%9B%84 HTTP/1.1" 200 14427
+WARNING 2020-09-15 05:15:50,649 log 228 Not Found: /json/newsList.json
+WARNING 2020-09-15 05:15:50,649 basehttp 154 "GET /json/newsList.json HTTP/1.1" 404 2101
+INFO 2020-09-15 05:15:52,976 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 05:15:53,035 log 228 Not Found: /users/index/js/navtab.js
+INFO 2020-09-15 05:15:53,037 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 21204
+WARNING 2020-09-15 05:15:53,037 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+WARNING 2020-09-15 05:15:53,133 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 05:15:53,133 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 05:15:58,465 basehttp 154 "GET /users/search/?q=28 HTTP/1.1" 200 16121
+WARNING 2020-09-15 05:15:58,499 log 228 Not Found: /json/newsList.json
+WARNING 2020-09-15 05:15:58,500 basehttp 154 "GET /json/newsList.json HTTP/1.1" 404 2101
+INFO 2020-09-15 05:16:00,408 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 05:16:00,459 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 05:16:00,464 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+INFO 2020-09-15 05:16:00,466 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 21204
+WARNING 2020-09-15 05:16:00,555 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 05:16:00,556 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 05:16:06,072 basehttp 154 "GET /users/search/?q=admin HTTP/1.1" 200 16121
+WARNING 2020-09-15 05:16:06,117 log 228 Not Found: /json/newsList.json
+WARNING 2020-09-15 05:16:06,118 basehttp 154 "GET /json/newsList.json HTTP/1.1" 404 2101
+INFO 2020-09-15 05:16:12,601 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 05:16:12,684 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 05:16:12,685 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+INFO 2020-09-15 05:16:12,690 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 21204
+WARNING 2020-09-15 05:16:12,767 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 05:16:12,768 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 05:16:17,388 basehttp 154 "GET /users/index/company/del_user_position/?nid=28 HTTP/1.1" 302 0
+INFO 2020-09-15 05:16:17,417 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 19332
+INFO 2020-09-15 05:16:18,952 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 19332
+WARNING 2020-09-15 05:16:18,988 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 05:16:18,989 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 05:16:20,723 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 05:16:20,771 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 05:16:20,773 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+INFO 2020-09-15 05:16:20,778 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 19332
+WARNING 2020-09-15 05:16:20,878 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 05:16:20,879 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 05:16:20,925 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 05:16:20,963 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 05:16:20,963 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+INFO 2020-09-15 05:16:20,968 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 19332
+WARNING 2020-09-15 05:16:21,049 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 05:16:21,049 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 05:16:21,157 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+WARNING 2020-09-15 05:16:21,194 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 05:16:21,195 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+INFO 2020-09-15 05:16:21,203 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 19332
+WARNING 2020-09-15 05:16:21,279 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 05:16:21,280 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 05:16:21,575 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+INFO 2020-09-15 05:16:21,629 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 19332
+WARNING 2020-09-15 05:16:21,631 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 05:16:21,632 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+WARNING 2020-09-15 05:16:21,726 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 05:16:21,727 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840
+INFO 2020-09-15 05:16:22,432 basehttp 154 "POST /users/index/company/export_position/ HTTP/1.1" 200 11264
+INFO 2020-09-15 05:16:47,281 basehttp 154 "GET /users/index/ HTTP/1.1" 200 14101
+INFO 2020-09-15 05:16:47,367 basehttp 154 "GET /users/index/company/position/ HTTP/1.1" 200 19332
+WARNING 2020-09-15 05:16:47,373 log 228 Not Found: /users/index/js/navtab.js
+WARNING 2020-09-15 05:16:47,374 basehttp 154 "GET /users/index/js/navtab.js HTTP/1.1" 404 2822
+WARNING 2020-09-15 05:16:47,410 log 228 Not Found: /users/index/json/newsList.json
+WARNING 2020-09-15 05:16:47,411 basehttp 154 "GET /users/index/json/newsList.json HTTP/1.1" 404 2840

@@ -1,7 +1,0 @@
-{{object.nid}}
-{{object.number}}
-{{ object.label }}
-{{object.department}}
-{{ object.department_manager }}
-{{ object.department_people }}
-{{object.create_time}}
