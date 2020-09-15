@@ -1,0 +1,6 @@
+{{object.nid}}
+{{object.username}}
+{{ object.position }}
+{{object.departments}}
+{{ object.iphone }}
+{{ object.address }}

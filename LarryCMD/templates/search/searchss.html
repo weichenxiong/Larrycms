@@ -26,14 +26,14 @@
                         </div>
                         <a class="layui-btn search_btn">查询</a>
                     </div> -->
-                    <!-- <div class="layui-inline">
+                    <div class="layui-inline">
                         <form action="/users/search/" method="get" class="layui-input-inline">
                             <div class="layui-input-inline">
                                 <input type="text" value="" name="q" id="q" class="layui-input search_inout">
                             </div>
                             <button type="submit" class="layui-btn search_btn" value="搜索">搜索</button>
                         </form>
-                    </div> -->
+                    </div>
                     <div class="layui-inline">
                         <button onclick="document.getElementById('id01').style.display='block'; document.getElementById('id02').style.display='none'" class="layui-btn layui-btn-normal newsAdd-btn">添加部门</button>
                     </div>
@@ -49,10 +49,7 @@
                         <div class="layui-form-mid layui-word-aux">本页面刷新后除新添加的部门外所有操作无效，关闭页面所有数据重置</div>
                     </div>
                 </blockquote>
-
-                
-
-                <!-- 添加部门模太框 -->
+                <!-- 模太框 -->
                 <div id="id01" class="modal　larry-personal-body clearfix" style="display: none;">
                     <form class="modal-content animate" action="/users/index/company/department_action/" method="POST" style="width: 800px; height: 600px;left: 350px;"> 
                         {% csrf_token %}
@@ -67,26 +64,26 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label">编号</label>
                                 <div class="layui-input-block">
-                                    <input type="text" id="number" placeholder="请输入编号" name="number" class="layui-input" style="width: 300px;">
+                                    <input type="text" placeholder="请输入编号" name="number" class="layui-input" style="width: 300px;">
                                 </div>     
                             </div>
                             <div class="layui-form-item">
                                 <label class="layui-form-label">标签</label>
                                 <div class="layui-input-block">
-                                    <input type="text" id="label" placeholder="请输入标签" name="label" class="layui-input" style="width: 300px;">
+                                    <input type="text" placeholder="请输入标签" name="label" class="layui-input" style="width: 300px;">
                                 </div>     
                             </div>
                             <div class="layui-form-item">
                                 <label class="layui-form-label">部门名称</label>
                                 <div class="layui-input-block">
-                                    <input type="text" id="department" placeholder="请输入部门名称" name="department" class="layui-input" style="width: 300px;">
+                                    <input type="text" placeholder="请输入部门名称" name="department" class="layui-input" style="width: 300px;">
                                 </div>     
                             </div>
                             <div class="layui-form-item">
                                 <label class="layui-form-label">负责人</label>
-                                <div class="layui-input-inline" style="left:40px;">
+                                <div class="layui-input-inline">
                                     <!-- <input type="text" placeholder="请输入负责人" name="department_manager" class="layui-input" style="width: 300px;"> -->
-                                    <select name="user" id="manager" style="width: 300px;height: 40px;">
+                                    <select name="user" id="" style="width: 300px;height: 40px;">
                                         {% for user in userList %}
                                             <option value="{{user.nid}}">{{user.username}}</option>
                                         {% endfor %}
@@ -96,18 +93,18 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label">部门人数</label>
                                 <div class="layui-input-block">
-                                    <input type="text" id="department_people" placeholder="请输入部门人数" name="department_people" class="layui-input" style="width: 300px;">
+                                    <input type="text" placeholder="请输入部门人数" name="department_people" class="layui-input" style="width: 300px;">
                                 </div>     
                             </div>
                             <div class="layui-form-item">
                                 <label class="layui-form-label">创建时间</label>
                                 <div class="layui-input-block">
-                                    <input type="date" id="create_time" placeholder="请输入创建时间" name="create_time" class="layui-input" style="width: 300px;">
+                                    <input type="date" placeholder="请输入创建时间" name="create_time" class="layui-input" style="width: 300px;">
                                 </div>     
                             </div>
                             <div class="layui-form-item">
                                 <div class="layui-input-block">
-                                    <button type="submit" id="commit" class="layui-btn" lay-submit="" lay-filter="demo1">提交</button>
+                                    <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">提交</button>
                                       <!-- 点击cancel按钮，把模态框隐藏-->
                                     <button type="button" onclick="document.getElementById('id01').style.display='none'; document.getElementById('id02').style.display='block'" class="layui-btn" lay-submit="" lay-filter="demo1">关闭</button>
                                 </div>
@@ -115,7 +112,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="layui-tab-content larry-personal-body clearfix mylog-info-box" id="id02" style="display: block;">
+                <div class="layui-tab-content larry-personal-body clearfix mylog-info-box" id="id02">
                     <div class="layui-tab-item layui-field-box layui-show">
                         <table class="layui-table table-hover" lay-even="" lay-skin="nob">
                             <thead>
@@ -132,22 +129,25 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {% for data in dataList %}  
-                                <tr>
-                                    <td><input type="checkbox" name="selOne" value={{data.nid}} onClick="funcSelOne(this)"></td>
-                                    <td>{{data.nid}}</td>
-                                    <td>{{data.number}}</td>
-                                    <td>{{data.label}}</td>
-                                    <td>{{data.department}}</td>
-                                    <td>{{data.department_manager.username}}</td>
-                                    <td>{{data.department_people}}</td>
-                                    <td>{{data.create_time|date:'Y-m-d'}}</td>
-                                    <td>
-                                        <a href="/users/index/company/department_edit/?nid={{data.nid}}"><button class="layui-btn layui-btn-radius">编辑</button></a>
-                                        <a href="/users/index/company/department_action/?nid={{data.nid}}"><button class="layui-btn layui-btn-radius layui-btn-warm">删除</button></a>
-                                    </td>
-                                </tr>
-                                {% endfor %}
+                                {% if query %}
+                                    {% for result in page.object_list %}  
+                                    <tr>
+                                        <td><input type="checkbox" name="selOne" value={{data.nid}} onClick="funcSelOne(this)"></td>
+                                        <td>{{result.object.nid}}</td>
+                                        <td>{{result.object.number}}</td>
+                                        <td>{{result.object.label}}</td>
+                                        <td>{{result.object.department}}</td>
+                                        <td>{{result.object.department_manager.username}}</td>
+                                        <td>{{result.object.department_people}}</td>
+                                        <td>{{result.object.create_time}}</td>
+                                        <td>
+                                            <a href="/users/index/company/department_action/?nid={{data.nid}}"><button class="layui-btn layui-btn-radius">编辑</button></a>
+                                            <a href="/users/index/company/department_action/?nid={{data.nid}}"><button class="layui-btn layui-btn-radius layui-btn-warm">删除</button></a>
+                                        </td>
+                                    </tr>
+                                    {% empty %}
+                                    {% endfor %}
+                                {% endif %}
                             </tbody>
                         </table>
                         <div class="larry-table-page clearfix">
