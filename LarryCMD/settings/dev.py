@@ -42,7 +42,8 @@ INSTALLED_APPS = [
 
     'haystack', #将haystack放在app前面
     'users',
-    'companyInfo'
+    'companyInfo',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [

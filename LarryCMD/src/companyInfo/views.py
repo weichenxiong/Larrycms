@@ -8,9 +8,12 @@ from .models import CompanyDetail, Department, Position
 from users.models import User
 from django.http import HttpResponseRedirect
 from haystack.views import SearchView
+from users.views import auth
+from django.utils.decorators import method_decorator
 
 
-
+@method_decorator(auth, name="get")
+@method_decorator(auth, name="post")
 class CompanyInfoView(View):
     """公司详情"""
     def get(self, request):
@@ -35,6 +38,9 @@ class CompanyInfoView(View):
 
         return redirect(url)
 
+
+@method_decorator(auth, name="get")
+@method_decorator(auth, name="post")
 class DepartmentInfo(View):
     """公司架构"""
     def get(self, request):
@@ -46,7 +52,10 @@ class DepartmentInfo(View):
 
     def post(self, request):
         pass
-        
+
+@method_decorator(auth, name="get")
+@method_decorator(auth, name="post")      
+@method_decorator(auth, name="delete") 
 class DepartmentAction(View):
 
     def get(self, request):
@@ -85,6 +94,7 @@ class DepartmentAction(View):
         # 这里不应该使用Httpresponse的，用其他进行页面刷新或者跳转就会被跨域限制，只能在前段进行页面刷新
         return HttpResponse("ok")
 
+@auth
 def downloadExcel(request):
     """导出excel"""
     if request.method == "POST":
@@ -126,7 +136,7 @@ def downloadExcel(request):
         print("创建成功",response)
         return response
 
-
+@method_decorator(auth, name="extra_context")
 class SeachView(SearchView):
     """搜索功能"""
     def extra_context(self):       #重载extra_context来添加额外的context内容
@@ -135,6 +145,8 @@ class SeachView(SearchView):
         context['side_list'] = side_list
         return context
 
+@method_decorator(auth, name="get")
+@method_decorator(auth, name="post")
 class DepartmentEdit(View):
     """部门编辑"""
     def get(self, request):
@@ -163,7 +175,8 @@ class DepartmentEdit(View):
 
         return redirect(url)
 
-
+@method_decorator(auth, name="get")
+@method_decorator(auth, name="post")
 class Positions(View):
     """员工岗位"""
     def get(self, request):
@@ -179,6 +192,8 @@ class Positions(View):
     def post(self,request):
         pass
 
+
+@auth
 def DelUserPosition(request):
     """删除用户岗位"""
     url = "/users/index/company/position/"
@@ -188,7 +203,7 @@ def DelUserPosition(request):
         User.objects.filter(nid=nid).delete()
         return redirect(url)
 
-
+@auth
 def ExportUserPosition(request):
     """导出员工岗位信息"""
     if request.method == "POST":
@@ -231,7 +246,7 @@ def ExportUserPosition(request):
         print("创建成功",response)
         return response
 
-
+@auth
 def BatchDelUserPosition(request):
     """批量删除选中的记录"""
     dataList = list()
@@ -240,7 +255,8 @@ def BatchDelUserPosition(request):
         dataList.append(int(i))
     User.objects.filter(nid__in=dataList).delete() #进行批量删除
     return HttpResponse("ok")
-    
+
+@auth 
 def AddUserPosition(request):
     """添加员工"""
     url = "/users/index/company/position/"
@@ -259,7 +275,8 @@ def AddUserPosition(request):
     print(username, position,department,enterTime,leaveTime,iphone,address)
     return redirect(url)
 
-
+@method_decorator(auth, name="get")
+@method_decorator(auth, name="post")
 class UserPositionEdit(View):
     def get(self,request):
 
