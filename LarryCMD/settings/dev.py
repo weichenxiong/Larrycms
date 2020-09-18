@@ -187,6 +187,9 @@ LOGGING = {
     }
 }
 
+
+AUTH_USER_MODEL = 'users.User'
+
 #2. 配置指定搜索引擎
 HAYSTACK_CONNECTIONS = {
     'default': {

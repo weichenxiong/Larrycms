@@ -1,6 +1,6 @@
 {{object.nid}}
 {{object.username}}
-{{ object.position }}
-{{object.departments}}
+{{ object.position.position}}
+{{object.departments.department}}
 {{ object.iphone }}
 {{ object.address }}
