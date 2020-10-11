@@ -114,6 +114,7 @@ def downloadExcel(request):
         data = Department.objects.all()
         data = list(data)
         excel_row = 1
+        print(data)
         for i in range(len(data)):
             sheet.write(excel_row, 0, data[i].nid)
             sheet.write(excel_row, 1, data[i].number)
