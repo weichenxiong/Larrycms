@@ -16,16 +16,37 @@ def login(request):
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")
-        print(username, password)
-        if len(username) > 0 and len(password) > 0:
-            try:
-                user = User.objects.get(username=username,password=password)
-                request.session["username"] = username
-                return redirect("/users/index/")
-            except:
-                return render(request, "login.html")
-        else:
-            return render(request, "login.html")
+
+        current_user = User.objects.filter(username=username, password=password).first()
+        if not current_user:
+            return render(request, 'login.html', {'msg': '用户名或密码错误'})
+        
+        # 根据当前用户获取所有权限，并存入session中
+        permission_queryset = current_user.roles.filter(permissions__isnull=False).values("permissions__id",
+                                                                                    "permissions__url",
+                                                                                    ).distinct()
+
+        # 获取权限中的所有URL
+        permission_list = list()
+        for item in permission_queryset:
+            # print(item["permissions__url"])
+            permission_list.append(item["permissions__url"])
+        # 用户的URL存进session中
+        request.session["permission_url_list_key"] = permission_list
+        # session保存登录信息
+        request.session["username"] = username
+        return redirect("/users/index/")
+
+    #     print(username, password)
+    #     if len(username) > 0 and len(password) > 0:
+    #         try:
+    #             user = User.objects.get(username=username,password=password)
+    #             request.session["username"] = username
+    #             return redirect("/users/index/")
+    #         except:
+    #             return render(request, "login.html")
+    #     else:
+    #         return render(request, "login.html")
     return render(request, "login.html")
 
 def loginout(request):

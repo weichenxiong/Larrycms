@@ -56,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'companyInfo.middleware.HttpPost2HttpOtherMiddleware',
+    'users.rbac.RbacMiddleware',
 ]
 
 ROOT_URLCONF = 'LarryCMD.urls'
@@ -189,6 +190,7 @@ LOGGING = {
 }
 
 
+#注册自定义模型
 AUTH_USER_MODEL = 'users.User'
 
 #2. 配置指定搜索引擎
