@@ -1,4 +1,4 @@
-## 介绍：LarryCMS管理系统
+## LarryCMS管理系统
 
 
 
