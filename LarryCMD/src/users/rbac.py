@@ -27,6 +27,7 @@ class RbacMiddleware(MiddlewareMixin):
             "/users/loginout/",
         ]
 
+        # 当前用户登录的url
         current_url = request.path_info
         # print(current_url,11111111111111111)
         for valid_url in valid_url_list:

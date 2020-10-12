@@ -17,6 +17,11 @@ def login(request):
         username = request.POST.get("username")
         password = request.POST.get("password")
 
+        #1. 验证账号密码，也可以使用自定义后端认证模型authenticate方法。
+        print(username, password)
+        if len(username) <= 0 and len(password) <= 0:
+            return HttpResponse("账号密码无效！")
+
         current_user = User.objects.filter(username=username, password=password).first()
         if not current_user:
             return render(request, 'login.html', {'msg': '用户名或密码错误'})
@@ -37,16 +42,6 @@ def login(request):
         request.session["username"] = username
         return redirect("/users/index/")
 
-    #     print(username, password)
-    #     if len(username) > 0 and len(password) > 0:
-    #         try:
-    #             user = User.objects.get(username=username,password=password)
-    #             request.session["username"] = username
-    #             return redirect("/users/index/")
-    #         except:
-    #             return render(request, "login.html")
-    #     else:
-    #         return render(request, "login.html")
     return render(request, "login.html")
 
 def loginout(request):
