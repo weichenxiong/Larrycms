@@ -193,6 +193,10 @@ LOGGING = {
 #注册自定义模型
 AUTH_USER_MODEL = 'users.User'
 
+#设置关闭浏览器session失效
+SESSION_SAVE_EVERY_REQUEST = True
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True 
+
 #2. 配置指定搜索引擎
 HAYSTACK_CONNECTIONS = {
     'default': {
